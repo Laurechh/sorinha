@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 228 24% 15%;
+    --foreground: 0 0% 100%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-dark text-text antialiased;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+  
+  .glass-darker {
+    @apply bg-black/20 backdrop-blur-sm border border-white/5;
+  }
+  
+  .button-primary {
+    @apply px-4 py-2 bg-primary hover:bg-primary-hover text-white rounded-md transition-colors;
+  }
+  
+  .button-secondary {
+    @apply px-4 py-2 bg-secondary hover:bg-secondary-hover text-white rounded-md transition-colors;
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent;
+  }
+}
